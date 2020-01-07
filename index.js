@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const path = require('path')
-const indexRoute = require('./routes/index')
 const adminRoute = require('./routes/admin')
 const unidadesRoute = require('./routes/unidades')
 
@@ -35,7 +34,7 @@ const createInitialUser = async () => {
   }
 }
 
-app.use('/', indexRoute)
+
 app.use('/unidades', unidadesRoute)
 app.use('/admin', adminRoute)
 
