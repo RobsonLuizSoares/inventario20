@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const adminRoute = require('./routes/admin')
 const unidadesRoute = require('./routes/unidades')
+const indexRoute = require('./routes/index')
 
 const port = process.env.PORT || 3000
 const mongo = 'mongodb+srv://robson:lya250916@inventario20-5omym.mongodb.net/test?retryWrites=true&w=majority'
@@ -34,7 +35,7 @@ const createInitialUser = async () => {
   }
 }
 
-
+app.use('/', indexRoute)
 app.use('/unidades', unidadesRoute)
 app.use('/admin', adminRoute)
 
