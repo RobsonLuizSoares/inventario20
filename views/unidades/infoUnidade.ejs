@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid my-3">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Inventário 2020</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">Início</a></li>
+              <li class="breadcrumb-item active"><a href="/unidades">Todas Unidades</a></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    
+    <div class='container'>
+    <div class='row'>
+        <div class='container-fluid my-3'>
+          <button class='btn btn-sm btn-secondary' onclick='goBack()' type="">Voltar </button>
+        </div>
+      </div>
+<h3>Informações da Unidade <%= unidade.nome %></h3>
+  <form method='post'>
+    <div class='row'>
+      <div class='col-md-6'>
+        Unidade: <%= unidade.nome %>
+        Responsável: <%= unidade.responsavel %>
+        UL:<%= unidade.ul %>
+        Grupo:<%= unidade.grupo %>
+        Leitura dos Bens: <%= unidade.bens %>
+        Entrega do Termo: <%= unidade.termo %>
+      </div>
+      <textarea class='form-control'rows="2" cols="" name='comentario'></textarea>
+      <input class='btn btn-primary' type="submit" name="" value="Registrar Comentário">
+    </div>
+    
+    
+  </form>
+
+    <% unidade.comentario.forEach( c => { %>
+    <div class='card'>
+    <%= c %>
+    </div>
+    <% }) %>
+</div>
+</div>
+    <script>
+      function goBack() {
+        window.history.back(2)
+      }
+    </script>
+<%- include('../partials/footer') %>
