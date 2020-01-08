@@ -24,8 +24,8 @@ const UnidadeSchema = new mongoose.Schema({
     required: true
   },
   comentario: {
-    type: [String],
-    created: Date.now
+    type: [String]
+
   }
 })
 

@@ -5,7 +5,7 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <div class="content-header">
-         <div class="container-fluid my-3">
+         <div class="container my-3">
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0 text-dark">Inventário 2020</h1>
@@ -24,11 +24,12 @@
       <!-- Main content -->
       <div class="content">
       <div class='row'>
-        <div class='container-fluid my-3'>
+        <div class='container my-3'>
           <button class='btn btn-sm btn-secondary' onclick='goBack()' type="">Voltar </button>
         </div>
       </div>
-      <div class='row '>
+    <div class='container'>
+      <div class='row'>
         <div class='col-md-4 '>
           <% if(percentualBens === 100) { %>
           <div class='alert percentual text-center'>
@@ -73,6 +74,9 @@
           </div>
         <% } %>
       </div>
+      
+        
+      
       <div class='row'>
         <div class='col-md-3'>
           <a href="/unidades/pendencias/<%= unidades[0].grupo %>/termo/pendente"><div class='alert cardStatus'>
@@ -98,17 +102,17 @@
             <h6 class='text-white text-center'>Unidades com Bens Lidos </h6>
           </div></a>
         </div>
-
-        <div class="container-fluid">
+      </div>
+        <div class="container">
           <div class="row ">
                <% unidades.forEach(unidade => { %>
             <div class="col-md-4 my-3">
               <div class="card card-outline text-center " >
-                <div class="card-header text-center ">
+                <div class="card-header text-center" style='min-height: 5rem;'>
                   <a href="/unidades/info/<%= unidade._id%>"><h6 class="m-0 text-center my-2"><%= unidade.nome %></h6></a>
                 </div>
                 
-                <div class="card-body text-center">
+                <div class="card-body text-center" style='min-height: 10rem;'>
                   <h6 class="text-center  mb-3 ">Responsável: &nbsp; <%- unidade.responsavel %> </h6>
                    <% if(unidade.bens === 'pendente') { %> 
                    <button class='btn btn-danger btn-sm mr-2' type="">Leitura Pendente</button>

@@ -17,7 +17,7 @@
 .entrar {
   font-weight: 600;
   width: 125px;
-  background-color: rgb(240, 81, 33)
+  background-color: rgb(240, 81, 33);
 }
 
 .entrar:hover {
@@ -37,9 +37,8 @@
 }
 
 .footerCard {
-  background-color: rgb(245, 113, 113);
+  background-color: rgb(189, 178, 178);
   opacity: 0.8;
-
 }
 
 .cardStatus {

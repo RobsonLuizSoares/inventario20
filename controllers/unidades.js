@@ -1,4 +1,4 @@
-const Unidade = require('../models/Unidade')
+//const Unidade = require('../models/Unidade')
 
 labelsBens = [
   { id: 'pendente', name: 'Pendente' },
@@ -7,6 +7,19 @@ labelsBens = [
 labelsTermo = [
   { id: 'pendente', name: 'Pendente' },
   { id: 'ok', name: 'Termo Entregue' }
+]
+//<%= unidades.filter( label => label.unidades_id === termoUnidade[0].id)[0].nome %>
+labelGrupo = [
+  { id: '1', name: 'Presidência' },
+  { id: '2', name: 'Corregedoria' },
+  { id: '3', name: 'Procuradoria' },
+  { id: '4', name: 'EJESC' },
+  { id: '5', name: 'DG' },
+  { id: '6', name: 'SAO' },
+  { id: '7', name: 'SGP' },
+  { id: '8', name: 'STI' },
+  { id: '9', name: 'SJ' },
+  { id: '10', name: 'ZE' },
 ]
 
 
@@ -156,7 +169,7 @@ const info = async ({ Unidade }, req, res) => {
   const percentualBens = Math.floor(parseInt(bensOk * 100 / unidadesGrupo))
 
   const unidade = await Unidade.findById({ _id: req.params.id })
-  res.render('unidades/infoUnidade', { unidade, totalUnidades, percentualTermo, percentualBens, unidadePendenteTermo, unidadeTermoOk, unidadeBensOk })
+  res.render('unidades/infoUnidade', { unidade, totalUnidades, percentualTermo, percentualBens, unidadePendenteTermo, unidadeTermoOk, unidadeBensOk, labelGrupo })
 }
 
 const addComentario = async ({ Unidade }, req, res) => {
